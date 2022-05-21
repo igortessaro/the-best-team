@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pokemon.TheBestTeam.Api", "Pokemon.TheBestTeam.Api\Pokemon.TheBestTeam.Api.csproj", "{7917215E-F5DE-40EE-B952-5F19F6175AC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pokemon.TheBestTeam.Domain", "Pokemon.TheBestTeam.Domain\Pokemon.TheBestTeam.Domain.csproj", "{B1EC3AE0-3C70-4AB7-925B-78FD8AA0A09B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pokemon.TheBestTeam.Infrastructure", "Pokemon.TheBestTeam.Infrastructure\Pokemon.TheBestTeam.Infrastructure.csproj", "{B30FBC8F-7972-4D06-B989-97AEF07D0B46}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7917215E-F5DE-40EE-B952-5F19F6175AC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7917215E-F5DE-40EE-B952-5F19F6175AC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7917215E-F5DE-40EE-B952-5F19F6175AC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7917215E-F5DE-40EE-B952-5F19F6175AC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1EC3AE0-3C70-4AB7-925B-78FD8AA0A09B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1EC3AE0-3C70-4AB7-925B-78FD8AA0A09B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1EC3AE0-3C70-4AB7-925B-78FD8AA0A09B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1EC3AE0-3C70-4AB7-925B-78FD8AA0A09B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B30FBC8F-7972-4D06-B989-97AEF07D0B46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B30FBC8F-7972-4D06-B989-97AEF07D0B46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B30FBC8F-7972-4D06-B989-97AEF07D0B46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B30FBC8F-7972-4D06-B989-97AEF07D0B46}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
