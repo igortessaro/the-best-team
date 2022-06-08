@@ -1,0 +1,52 @@
+version: '3.9'
+
+services:
+  pokemon-thebestteam-api:
+    container_name: pokemon-thebestteam-api
+    image: dojo/pokemon-thebestteam-api
+    build:
+      context: ../../src/api/
+      dockerfile: ./Pokemon.TheBestTeam.Api/Dockerfile
+    ports:
+      - "1051:443"
+      - "1050:80"
+    networks:
+      - pokemon-network
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+    environment:
+      - TZ=America/Sao_Paulo
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+  pokemon-thebestteam-db:
+    container_name: pokemon-thebestteam-db
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=pokemon
+      - POSTGRES_USER=pokemon
+      - POSTGRES_DB=thebestteam
+    networks:
+      - pokemon-network
+  pgadmin-pokemon-thebestteam-db:
+    container_name: pgadmin-pokemon-thebestteam-db
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - "5050:80"
+    environment:
+      - PGADMIN_DEFAULT_PASSWORD=pokemon
+      - PGADMIN_DEFAULT_USER=pokemon
+      - PGADMIN_DEFAULT_EMAIL=pokemon@pokemon.com
+    networks:
+      - pokemon-network
+
+volumes:
+  pokemon-thebestteam-api-data:
+
+networks:
+  pokemon-network:
+    name: pokemon-network
