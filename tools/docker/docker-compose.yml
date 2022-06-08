@@ -28,7 +28,7 @@ services:
     environment:
       - POSTGRES_PASSWORD=pokemon
       - POSTGRES_USER=pokemon
-      - POSTGRES_DB=pokemon
+      - POSTGRES_DB=thebestteam
     networks:
       - pokemon-network
   pgadmin-pokemon-thebestteam-db:

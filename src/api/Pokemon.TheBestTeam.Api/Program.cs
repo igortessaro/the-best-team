@@ -1,3 +1,5 @@
+using Pokemon.TheBestTeam.Infrastructure.CrossCutting.IoC;
+
 string originsPolicy = "AllowAllOrigins";
 string[] headersExposed = new string[] { "Date", "Content-Type", "Content-Disposition", "Content-Length" };
 
@@ -13,6 +15,9 @@ _ = builder.Services.AddCors(options =>
 {
     options.AddPolicy(originsPolicy, builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().WithExposedHeaders(headersExposed));
 });
+_ = builder.Services.AddPostgresDbContext(builder.Configuration);
+_ = builder.Services.AddInfrastructureAutoMapper();
+_ = builder.Services.AddRelationalRepository();
 
 var app = builder.Build();
 
