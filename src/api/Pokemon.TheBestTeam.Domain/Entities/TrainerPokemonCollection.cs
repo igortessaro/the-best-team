@@ -1,27 +1,25 @@
+using System;
 namespace Pokemon.TheBestTeam.Domain.Entities
 {
     public class TrainerPokemonCollection
     {
-        public TrainerPokemonCollection(int id, int pokemonId, int trainerId, int aquisitionDate)
+        public TrainerPokemonCollection(int pokemonId, int trainerId)
         {
-            this.Id = id;
+            this.Id = new Guid();
             this.PokemonId = pokemonId;
             this.TrainerId = trainerId;
-            this.AquisitionDate = aquisitionDate;
-        }
-
-        public TrainerPokemonCollection(int id)
-        {
-            this.Id = id;
+            this.AquisitionDate = DateTime.Now;
+            this.IsFavorite = false;
         }
 
         public TrainerPokemonCollection() { }
 
-        public int Id { get; set; }
+        public Guid Id { get; set; }
+        public Pokemon Pokemon { get; set; }
+        public Trainer Trainer { get; set; }
         public int PokemonId { get; set; }
         public int TrainerId { get; set; }
-        public int AquisitionDate { get; set; }
+        public DateTime AquisitionDate { get; set; }
+        public bool IsFavorite { get; set; }
     }
-
-
 }

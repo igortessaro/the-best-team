@@ -16,4 +16,10 @@ public class CollectionController : ControllerBase
         _logger = logger;
         _collectionRepository = collectionRepository;
     }
+
+    [HttpGet]
+    public IEnumerable<TrainerPokemonCollection> GetAllPokemonsByTrainerId(int trainerId)
+    {
+        return _collectionRepository.GetAllPokemonsByTrainerId(trainerId);
+    }
 }
