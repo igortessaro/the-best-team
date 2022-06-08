@@ -79,3 +79,32 @@ Pokemons
 Treinador #1
 Pokemons
     #2, #2, #3
+
+## Scripts para criar base de dados
+
+### Criar schema
+
+```sql
+CREATE SCHEMA IF NOT EXISTS api;
+```
+### Criar tabela
+
+```sql
+CREATE TABLE IF NOT EXISTS api.trainer (
+   id serial PRIMARY KEY,
+   name VARCHAR(150) NOT NULL,
+   password VARCHAR(150) NOT NULL,
+   email VARCHAR(150) NOT NULL,
+   nickname VARCHAR(150) NOT NULL
+);
+```
+
+### Inserir dados de treinador
+
+```sql
+INSERT INTO api.trainer(name, password, email, nickname)
+VALUES 
+    ('Fulano Silva', '********', 'fulano.silva@test.com', 'Fulano'),
+    ('Beltrano Santos', '********', 'beltrano.santos@test.com', 'Beltrano'),
+    ('Ciclano Silva Santos', '********', 'ciclano.silva@test.com', 'Ciclano');
+```
