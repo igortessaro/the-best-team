@@ -1,25 +1,26 @@
 using Microsoft.AspNetCore.Mvc;
-using Pokemon.TheBestTeam.Api.Models;
 using Pokemon.TheBestTeam.Domain.Repositories;
 
-namespace Pokemon.TheBestTeam.Api.Controllers;
 
-[ApiController]
-[Route("[controller]")]
-public class CollectionController : ControllerBase
+namespace Pokemon.TheBestTeam.Api.Controllers
 {
-    private readonly ILogger<CollectionController> _logger;
-    private readonly ITrainerPokemonCollectionRepository _collectionRepository;
-
-    public CollectionController(ILogger<CollectionController> logger, ITrainerPokemonCollectionRepository collectionRepository)
+    [ApiController]
+    [Route("[controller]")]
+    public class CollectionController : ControllerBase
     {
-        _logger = logger;
-        _collectionRepository = collectionRepository;
-    }
+        private readonly ICollectionRepository _repository;
 
-    [HttpGet]
-    public IEnumerable<TrainerPokemonCollection> GetAllPokemonsByTrainerId(int trainerId)
-    {
-        return _collectionRepository.GetAllPokemonsByTrainerId(trainerId);
+        public CollectionController(ICollectionRepository repository)
+        {
+            _repository = repository;
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetAllPokemonsAsync(int id)
+        {
+            var result = await this._repository.GetAllByTrainerIdAsync(id);
+
+            return this.Ok(result);
+        }
     }
 }
