@@ -18,7 +18,7 @@ public sealed class TheBestTeamContext : DbContext
     }
 
     public DbSet<Trainer>? Trainers { get; set; }
-    public DbSet<Trainer>? Collection { get; set; }
+    public DbSet<Collection>? Collection { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

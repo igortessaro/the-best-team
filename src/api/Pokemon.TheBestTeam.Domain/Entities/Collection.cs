@@ -1,7 +1,11 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Pokemon.TheBestTeam.Domain.Entities;
 
 public sealed class Collection
 {
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
     public int PokemonId { get; set; }
     public int TrainerId { get; set; }

@@ -11,7 +11,7 @@ public sealed class CollectionConfiguration : IEntityTypeConfiguration<Collectio
         builder.ToTable("collection", "api");
 
         builder.HasKey(e => e.Id);
-        builder.Property(e => e.Id).ValueGeneratedOnAdd().HasColumnName("Id");
+        builder.Property(e => e.Id).ValueGeneratedOnAdd().HasColumnName("ID");
 
         builder.Property(e => e.TrainerId).HasColumnName("TRAINER_ID");
         builder.Property(e => e.PokemonId).HasColumnName("POKEMON_ID");
