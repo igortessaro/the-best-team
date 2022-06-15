@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Collections.ObjectModel;
+using Microsoft.EntityFrameworkCore;
 using Pokemon.TheBestTeam.Domain.Entities;
 using Pokemon.TheBestTeam.Infrastructure.Repositories.Relational.Configurations;
 using System.Diagnostics;
@@ -17,6 +18,7 @@ public sealed class TheBestTeamContext : DbContext
     }
 
     public DbSet<Trainer>? Trainers { get; set; }
+    public DbSet<Collection>? Collection { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -26,5 +28,6 @@ public sealed class TheBestTeamContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfiguration(new TrainerConfiguration());
+        modelBuilder.ApplyConfiguration(new CollectionConfiguration());
     }
 }

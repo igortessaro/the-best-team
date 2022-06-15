@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Pokemon.TheBestTeam.Infrastructure\Pokemon.TheBestTeam.Infrastructure.csproj" />
+    <ProjectReference Include="..\Pokemon.TheBestTeam.Domain\Pokemon.TheBestTeam.Domain.csproj" />
   </ItemGroup>
 
 </Project>

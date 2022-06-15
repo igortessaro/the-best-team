@@ -20,6 +20,12 @@ public abstract class BaseRepository<TEntity> : IDisposable, IBaseRepository<TEn
         this._mapper = mapper;
     }
 
+    public async Task<int> AddAsync(TEntity entity)
+    {
+        await this._context.AddAsync(entity);
+        return await this._context.SaveChangesAsync();
+    }
+
     public IQueryable<TEntity> Query(int take = 100) => this._dbSet.AsNoTracking();
 
     public IQueryable<TProjetion> Query<TProjetion>(Expression<Func<TEntity, bool>> predicate) where TProjetion : class

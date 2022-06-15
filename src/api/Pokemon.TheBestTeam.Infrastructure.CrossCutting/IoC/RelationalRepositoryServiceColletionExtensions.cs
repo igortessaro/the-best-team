@@ -9,6 +9,7 @@ public static class RelationalRepositoryServiceColletionExtensions
     public static IServiceCollection AddRelationalRepository(this IServiceCollection services)
     {
         _ = services.AddScoped<ITrainerRepository, TrainerRepository>();
+        _ = services.AddScoped<ICollectionRepository, CollectionRepository>();
 
         return services;
     }
