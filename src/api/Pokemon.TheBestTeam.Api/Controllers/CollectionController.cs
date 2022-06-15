@@ -17,7 +17,7 @@ namespace Pokemon.TheBestTeam.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetAllPokemonsAsync(int id)
+        public async Task<IActionResult> GetAllAsync(int id)
         {
             var result = await this._repository.GetAllByTrainerIdAsync(id);
 
@@ -25,9 +25,9 @@ namespace Pokemon.TheBestTeam.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddPokemonAsync(CollectionSummaryQuery collection)
+        public async Task<IActionResult> AddAsync(CollectionSummaryQuery collection)
         {
-            var result = await this._repository.AddPokemonAsync(collection);
+            var result = await this._repository.AddAsync(collection);
 
             return this.Ok(result);
         }

@@ -17,16 +17,16 @@ public sealed class CollectionRepository : BaseRepository<Collection>, ICollecti
         _context = context;
     }
 
-    public async Task<int> AddPokemonAsync(CollectionSummaryQuery collectionDto)
+    public Task<int> AddAsync(CollectionSummaryQuery collectionDto)
     {
-        var collection = new Collection {
+        var collection = new Collection
+        {
             TrainerId = collectionDto.TrainerId,
             PokemonId = collectionDto.PokemonId,
             AquisitionDate = DateTime.UtcNow,
         };
 
-        await _context.AddAsync(collection);
-        return await _context.SaveChangesAsync();
+        return this.AddAsync(collection);
     }
 
     public async Task<IReadOnlyCollection<CollectionSummaryQuery>> GetAllByTrainerIdAsync(int id)

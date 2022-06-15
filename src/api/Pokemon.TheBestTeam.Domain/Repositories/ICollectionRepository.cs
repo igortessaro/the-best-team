@@ -7,5 +7,5 @@ namespace Pokemon.TheBestTeam.Domain.Repositories;
 public interface ICollectionRepository : IBaseRepository<Collection>
 {
     Task<IReadOnlyCollection<CollectionSummaryQuery>> GetAllByTrainerIdAsync(int id);
-    Task<int> AddPokemonAsync(CollectionSummaryQuery collection);
+    Task<int> AddAsync(CollectionSummaryQuery collection);
 }
