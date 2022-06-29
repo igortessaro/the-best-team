@@ -26,7 +26,7 @@ Ex:
 #4 Gustavo
 #5 Gabriel
 
-## Cadastro de Pokemons [Guilherme/Bruno]
+## Cadastro de Pokemons [Guilherme]
 
 Monstrinhos ficticios do jogo pokemon
 
@@ -52,7 +52,7 @@ Premissas para ter um cadastro de colecao de pokemons:
         - Criar script sql para criacao de tabela
     - Endpoint para CRUD de colecao de pokemons
 
-## Cadastro de time - ate 6 pokemons [Leonardo]
+## Cadastro de time - ate 6 pokemons [Leonardo/Bruno]
 
 Um conjunto de ate 6 pokemons de um determinado treinador.
 
