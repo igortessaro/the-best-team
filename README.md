@@ -26,7 +26,7 @@ Ex:
 #4 Gustavo
 #5 Gabriel
 
-## Cadastro de Pokemons [Guilherme]
+## Cadastro de Pokemons [Guilherme/Bruno]
 
 Monstrinhos ficticios do jogo pokemon
 
