@@ -17,13 +17,14 @@ public sealed class CollectionRepository : BaseRepository<Collection>, ICollecti
         _context = context;
     }
 
-    public Task<int> AddAsync(CollectionSummaryQuery collectionDto)
+    public Task<int> AddAsync(CollectionCreateCommand command)
     {
         var collection = new Collection
         {
-            TrainerId = collectionDto.TrainerId,
-            PokemonId = collectionDto.PokemonId,
+            TrainerId = command.TrainerId,
+            PokemonId = command.PokemonId,
             AquisitionDate = DateTime.UtcNow,
+            IsFavorite = false,
         };
 
         return this.AddAsync(collection);

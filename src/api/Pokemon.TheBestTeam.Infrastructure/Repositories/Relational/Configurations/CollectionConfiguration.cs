@@ -11,11 +11,11 @@ public sealed class CollectionConfiguration : IEntityTypeConfiguration<Collectio
         builder.ToTable("collection", "api");
 
         builder.HasKey(e => e.Id);
-        builder.Property(e => e.Id).ValueGeneratedOnAdd().HasColumnName("ID");
+        builder.Property(e => e.Id).ValueGeneratedOnAdd().HasColumnName("id");
 
-        builder.Property(e => e.TrainerId).HasColumnName("TRAINER_ID");
-        builder.Property(e => e.PokemonId).HasColumnName("POKEMON_ID");
-        builder.Property(e => e.AquisitionDate).HasColumnName("AQUISITION_DATE");
-        builder.Property(e => e.IsFavorite).HasColumnName("IS_FAVORITE");
+        builder.Property(e => e.TrainerId).HasColumnName("id_trainer");
+        builder.Property(e => e.PokemonId).HasColumnName("id_pokemon");
+        builder.Property(e => e.IsFavorite).HasColumnName("is_favorite");
+        builder.Property(e => e.AquisitionDate).HasColumnName("aquisition_date");
     }
 }
