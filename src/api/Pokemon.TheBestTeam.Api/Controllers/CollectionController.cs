@@ -25,7 +25,7 @@ namespace Pokemon.TheBestTeam.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddAsync(CollectionSummaryQuery collection)
+        public async Task<IActionResult> AddAsync(CollectionCreateCommand collection)
         {
             var result = await this._repository.AddAsync(collection);
 

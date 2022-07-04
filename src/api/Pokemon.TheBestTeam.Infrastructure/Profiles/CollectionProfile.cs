@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Collections.ObjectModel;
+using AutoMapper;
 using Pokemon.TheBestTeam.Domain.CQRS.Queries;
 using Pokemon.TheBestTeam.Domain.Entities;
 
@@ -9,5 +10,6 @@ public sealed class CollectionProfile : Profile
     public CollectionProfile()
     {
         CreateMap<Collection, CollectionSummaryQuery>();
+        CreateMap<CollectionCreateCommand, Collection>();
     }
 }
