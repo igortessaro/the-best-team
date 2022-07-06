@@ -71,7 +71,7 @@ jobs:
         shell: powershell
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"igortessaro_the-best-team" /o:"igortessaro" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          <insert_your_build_command>
+          dotnet build --configuration Release --no-restore ./src/api/Pokemon.TheBestTeam.sln
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
       - name: Build and analyze
         run: dotnet build --configuration Release --no-restore ./src/api/Pokemon.TheBestTeam.sln
