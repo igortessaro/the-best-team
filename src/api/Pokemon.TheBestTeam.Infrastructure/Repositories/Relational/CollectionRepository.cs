@@ -10,19 +10,17 @@ namespace Pokemon.TheBestTeam.Infrastructure.Repositories.Relational;
 
 public sealed class CollectionRepository : BaseRepository<Collection>, ICollectionRepository
 {
-    private TheBestTeamContext _context;
     public CollectionRepository(TheBestTeamContext context, IMapper mapper)
         : base(context, mapper)
     {
-        _context = context;
     }
 
-    public Task<int> AddAsync(CollectionCreateCommand command)
+    public Task<int> AddAsync(CollectionCreateCommand newCollection)
     {
         var collection = new Collection
         {
-            TrainerId = command.TrainerId,
-            PokemonId = command.PokemonId,
+            TrainerId = newCollection.TrainerId,
+            PokemonId = newCollection.PokemonId,
             AquisitionDate = DateTime.UtcNow,
             IsFavorite = false,
         };
