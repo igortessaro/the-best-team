@@ -26,6 +26,22 @@ public abstract class BaseRepository<TEntity> : IDisposable, IBaseRepository<TEn
         return await this._context.SaveChangesAsync();
     }
 
+    public async Task<TEntity?> GetByIdAsync(int id)
+    {
+        return await this._dbSet.FindAsync(id);
+    }
+
+    public async Task<int> DeleteAsync(int id)
+    {
+        var entity = await this.GetByIdAsync(id);
+        if (entity == null)
+        {
+            return 0;
+        }
+        this._context.Remove(entity);
+        return await this._context.SaveChangesAsync();
+    }
+
     public IQueryable<TEntity> Query(int take = 100) => this._dbSet.AsNoTracking();
 
     public IQueryable<TProjetion> Query<TProjetion>(Expression<Func<TEntity, bool>> predicate) where TProjetion : class

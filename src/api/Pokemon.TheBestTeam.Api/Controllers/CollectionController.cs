@@ -1,3 +1,4 @@
+using System.Collections.ObjectModel;
 using Microsoft.AspNetCore.Mvc;
 using Pokemon.TheBestTeam.Domain.CQRS.Queries;
 using Pokemon.TheBestTeam.Domain.Repositories;
@@ -25,9 +26,17 @@ namespace Pokemon.TheBestTeam.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddAsync(CollectionCreateCommand collection)
+        public async Task<IActionResult> AddAsync(CreateCollectionCommand collection)
         {
             var result = await this._repository.AddAsync(collection);
+
+            return this.Ok(result);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteAsync(int id)
+        {
+            var result = await this._repository.DeleteAsync(id);
 
             return this.Ok(result);
         }

@@ -17,7 +17,7 @@ public sealed class CollectionRepository : BaseRepository<Collection>, ICollecti
         _context = context;
     }
 
-    public Task<int> AddAsync(CollectionCreateCommand command)
+    public Task<int> AddAsync(CreateCollectionCommand command)
     {
         var collection = new Collection
         {
