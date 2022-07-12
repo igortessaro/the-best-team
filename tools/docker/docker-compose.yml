@@ -41,6 +41,8 @@ services:
       - PGADMIN_DEFAULT_PASSWORD=pokemon
       - PGADMIN_DEFAULT_USER=pokemon
       - PGADMIN_DEFAULT_EMAIL=pokemon@pokemon.com
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - pokemon-network
 

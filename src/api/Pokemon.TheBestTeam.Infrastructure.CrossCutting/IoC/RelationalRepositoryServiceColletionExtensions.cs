@@ -10,6 +10,7 @@ public static class RelationalRepositoryServiceColletionExtensions
     {
         _ = services.AddScoped<ITrainerRepository, TrainerRepository>();
         _ = services.AddScoped<ICollectionRepository, CollectionRepository>();
+        _ = services.AddScoped<IPokedexRepository, PokedexRepository>();
 
         return services;
     }
