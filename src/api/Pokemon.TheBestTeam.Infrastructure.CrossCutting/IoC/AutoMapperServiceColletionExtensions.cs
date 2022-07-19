@@ -9,6 +9,7 @@ public static class AutoMapperServiceColletionExtensions
     {
         _ = services.AddAutoMapper(x => x.AddProfile<TrainerProfile>());
         _ = services.AddAutoMapper(x => x.AddProfile<CollectionProfile>());
+        _ = services.AddAutoMapper(x => x.AddProfile<PokedexProfile>());
 
         return services;
     }

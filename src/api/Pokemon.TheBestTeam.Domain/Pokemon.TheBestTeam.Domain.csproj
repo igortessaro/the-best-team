@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CQRS\Commands\" />
     <Folder Include="Handlers\" />
   </ItemGroup>
 
