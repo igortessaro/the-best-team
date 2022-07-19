@@ -15,12 +15,12 @@ public sealed class CollectionRepository : BaseRepository<Collection>, ICollecti
     {
     }
 
-    public Task<int> AddAsync(CollectionCreateCommand newCollection)
+    public Task<int> AddAsync(CreateCollectionCommand command)
     {
         var collection = new Collection
         {
-            TrainerId = newCollection.TrainerId,
-            PokemonId = newCollection.PokemonId,
+            TrainerId = command.TrainerId,
+            PokemonId = command.PokemonId,
             AquisitionDate = DateTime.UtcNow,
             IsFavorite = false,
         };

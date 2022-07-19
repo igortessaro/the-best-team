@@ -10,6 +10,6 @@ public sealed class CollectionProfile : Profile
     public CollectionProfile()
     {
         CreateMap<Collection, CollectionSummaryQuery>();
-        CreateMap<CollectionCreateCommand, Collection>();
+        CreateMap<CreateCollectionCommand, Collection>();
     }
 }
